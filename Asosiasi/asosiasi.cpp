@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-class dokter;
+class dokter; 
 
 
 class pasien{  //asosiasi
@@ -16,4 +16,21 @@ class pasien{  //asosiasi
             cout << "Pasien \"" << nama
             << "\" tidak ada\n";
         }
-}
+        void tambahDokter(dokter);
+        void cetakDokter();
+};
+
+class dokter {
+    public:
+        string nama;
+        vector<pasien*> daftar_pasien;
+
+        dokter(string pNama): nama(pNama) {
+            cout << "dokter \"" << nama << "\" ada\n";
+        }
+        ~dokter() {
+            cout << "Dokter \"" << nama
+            << "\" tidak ada\n";
+        }
+
+};
